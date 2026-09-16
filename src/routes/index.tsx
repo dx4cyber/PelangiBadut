@@ -127,7 +127,7 @@ function Home() {
                   </div>
                 </div>
                 <a
-                  href="https://tiktok.com/@pelangibadutbanyuwangi"
+                  href="https://www.tiktok.com/@pelangi_badut_banyuwangi"
                   target="_blank"
                   rel="noreferrer"
                   className="sm:ml-auto shrink-0 inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white hover:scale-105 transition-transform"
