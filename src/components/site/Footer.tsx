@@ -39,7 +39,7 @@ https://www.instagram.com/pelangi_badut_banyuwangi?igsh=MWQzeng1bGx1eGU3OQ==
 " target="_blank" rel="noreferrer" className="h-9 w-9 inline-flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition-colors">
               <Instagram className="h-4 w-4" />
             </a>
-            <a href="https://tiktok.com/@pelangibadutbanyuwangi" target="_blank" rel="noreferrer" className="h-9 w-9 inline-flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition-colors" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@pelangi_badut_banyuwangi" target="_blank" rel="noreferrer" className="h-9 w-9 inline-flex items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white transition-colors" aria-label="TikTok">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M16.5 3a5.5 5.5 0 0 0 5 3.2v3.1a8.4 8.4 0 0 1-5-1.6v7.2a6.4 6.4 0 1 1-6.4-6.4c.3 0 .5 0 .8.1v3.2a3.3 3.3 0 1 0 2.4 3.1V3h3.2Z" /></svg>
             </a>
           </div>
