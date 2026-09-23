@@ -12,12 +12,12 @@ export const Route = createFileRoute("/paket")({
       {
         name: "description",
         content:
-          "Pilihan paket hiburan ulang tahun anak di Banyuwangi mulai dari Rp 1.500.000. Paket Sedang hingga Paket Glamour.",
+         "Pilihan paket hiburan ulang tahun anak di Banyuwangi mulai dari Rp 1.000.000. Paket Hemat, Paket Sedang hingga Paket Glamour."
       },
       { property: "og:title", content: "Paket Layanan — Pelangi Badut Banyuwangi" },
       {
         property: "og:description",
-        content: "Paket badut, sulap, dan dekorasi ulang tahun anak lengkap di Banyuwangi.",
+        content: "Paket badut, Magic Show, games, dan dekorasi ulang tahun anak lengkap di Banyuwangi.",
       },
     ],
   }),
@@ -25,12 +25,13 @@ export const Route = createFileRoute("/paket")({
 });
 
 const tabs = [
+  { id: "hemat", label: "Paket Hemat" },
   { id: "sedang", label: "Paket Sedang" },
   { id: "besar", label: "Paket Besar & Premium" },
 ] as const;
 
 function PaketPage() {
-  const [tab, setTab] = useState<"sedang" | "besar">("sedang");
+  const [tab, setTab] = useState<"hemat" | "sedang" | "besar">("sedang");
   const list = pakets.filter((p) => p.tier === tab);
 
   return (
@@ -77,19 +78,24 @@ function PaketPage() {
 
         {/* Cards */}
         <AnimatePresence mode="wait">
-          <motion.div
-            key={tab}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3 }}
-            className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {list.map((p, i) => (
-              <PaketCard key={p.id} paket={p} index={i} />
-            ))}
-          </motion.div>
-        </AnimatePresence>
+  <motion.div
+    key={tab}
+    initial={{ opacity: 0, y: 12 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -12 }}
+    transition={{ duration: 0.3 }}
+    className="mt-12 flex flex-wrap justify-center gap-6"
+  >
+    {list.map((p, i) => (
+     <div
+  key={p.id}
+  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm self-stretch"
+>
+        <PaketCard paket={p} index={i} />
+      </div>
+    ))}
+  </motion.div>
+</AnimatePresence>
 
         {/* Disclaimer */}
         <div className="mt-12 flex justify-center">
@@ -129,7 +135,11 @@ function PaketCard({ paket, index }: { paket: Paket; index: number }) {
 
       <div>
         <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-          {paket.tier === "sedang" ? "Paket Sedang" : "Paket Premium"}
+         {paket.tier === "hemat"
+  ? "Paket Hemat"
+  : paket.tier === "sedang"
+    ? "Paket Sedang"
+    : "Paket Premium"}
         </div>
         <h3 className="mt-1.5 text-xl font-semibold text-slate-900">{paket.nama}</h3>
         <div className="mt-3 flex items-baseline gap-1">
@@ -180,11 +190,11 @@ function PaketCard({ paket, index }: { paket: Paket; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
       whileHover={{ y: -6 }}
-      className="relative"
+      className="relative h-full"
     >
       {isPopuler || isVip ? (
-        <div
-          className={`relative rounded-[1.6rem] p-[2px] shadow-[0_20px_50px_rgb(0,0,0,0.08)] ${
+       <div 
+       className={`relative h-full rounded-[1.6rem] p-[2px] shadow-[0_20px_50px_rgb(0,0,0,0.08)] ${
             isVip
               ? "bg-[linear-gradient(135deg,#fbbf24,#f59e0b,#e879f9,#38bdf8)]"
               : "bg-[linear-gradient(135deg,rgba(251,191,36,0.7),rgba(56,189,248,0.7),rgba(232,121,249,0.6),rgba(52,211,153,0.7))]"
@@ -193,7 +203,9 @@ function PaketCard({ paket, index }: { paket: Paket; index: number }) {
           {inner}
         </div>
       ) : (
-        <div className="shadow-[0_4px_20px_rgb(0,0,0,0.03)] rounded-3xl">{inner}</div>
+        <div className="h-full shadow-[0_4px_20px_rgb(0,0,0,0.03)] rounded-3xl">
+  {inner}
+</div>
       )}
     </motion.div>
   );

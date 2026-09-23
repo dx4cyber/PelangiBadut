@@ -3,27 +3,64 @@ export type Paket = {
   nama: string;
   harga: string;
   hargaLabel?: string;
-  tier: "sedang" | "besar";
+  tier: "hemat" | "sedang" | "besar";
   fitur: string[];
   highlight?: "populer" | "vip";
   ribbon?: string;
 };
 
 export const pakets: Paket[] = [
+
+    {
+    id: "hemat-mini",
+    nama: "Paket Mini",
+    harga: "Rp 1.250.000",
+    hargaLabel: "Rp 1.250.000",
+    tier: "hemat",
+    fitur: [
+      "Master of Ceremony",
+      "Magic Show",
+      "1 Badut Karakter (sesuai request)",
+      "Banner 2x2",
+      "Dekorasi Mini",
+      "Bubble Mini",
+      "Confetti",
+      "Games",
+      "Konsep Ultah",
+      "Doorprize Mini",
+    ],
+  },
+  {
+    id: "hemat-isi-acara",
+    nama: "Paket Isi Acara",
+    harga: "Rp 1.000.000",
+    hargaLabel: "Rp 1.000.000",
+    tier: "hemat",
+    fitur: [
+      "Master of Ceremony",
+      "Magic Show",
+      "1 Badut Karakter (sesuai request)",
+      "Games",
+      "Confetti",
+      "Bubble",
+    ],
+  },
+
   {
     id: "sedang-1",
     nama: "Paket Sedang 1",
     harga: "Rp 1.500.000",
     tier: "sedang",
     fitur: [
-      "MC",
+      "Master of Ceremony",
       "1 Badut",
       "Backdrop 2x2",
-      "Sulap",
-      "Dekorasi Balon 3D Gate",
-      "Snow Spray",
+      "Magic Show",
+      "Dekorasi Balon 3D",
+      "Bubble",
       "Confetti",
       "Konsep Ultah",
+      "Games",
     ],
   },
   {
@@ -32,12 +69,12 @@ export const pakets: Paket[] = [
     harga: "Rp 2.000.000",
     tier: "sedang",
     fitur: [
-      "MC",
+      "Master of Ceremony",
       "2 Badut",
       "Backdrop 3x2",
-      "Sulap",
-      "Dekorasi Balon 3D Gate",
-      "Snow Spray",
+      "Magic Show",
+      "Dekorasi Balon 3D",
+      "Bubble",
       "Confetti",
       "Sound System",
       "Konsep Ultah",
@@ -50,13 +87,13 @@ export const pakets: Paket[] = [
     harga: "Rp 2.500.000",
     tier: "sedang",
     fitur: [
-      "MC",
+      "Master of Ceremony",
       "2 Badut",
       "Backdrop 3x2",
-      "Sulap",
-      "Dekorasi Balon 3D Gate",
+      "Magic Show",
+      "Dekorasi Balon 3D",
       "Dekorasi Pintu Masuk",
-      "Snow Spray",
+      "Bubble",
       "Confetti",
       "Sound System",
       "Konsep Ultah",
@@ -70,13 +107,13 @@ export const pakets: Paket[] = [
     harga: "Rp 3.500.000",
     tier: "sedang",
     fitur: [
-      "MC",
+      "Master of Ceremony",
       "3 Badut",
       "Backdrop 3x2",
-      "Sulap",
-      "Dekorasi Balon 3D Gate",
+      "Magic Show",
+      "Dekorasi Balon 3D",
       "Dekorasi Pintu Masuk",
-      "Snow Spray",
+      "Bubble",
       "Confetti",
       "Sound System",
       "Konsep Ultah",
@@ -96,7 +133,7 @@ export const pakets: Paket[] = [
       "3 Badut",
       "Backdrop 4x3",
       "Sulap Premium",
-      "Dekorasi Balon 3D Gate",
+      "Dekorasi Balon 3D",
       "Dekorasi Pintu Masuk",
       "Snow Spray & Confetti",
       "Sound System Premium",
